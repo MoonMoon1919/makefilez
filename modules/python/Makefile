@@ -1,6 +1,6 @@
 # Make targets for python
 PWD ?= $(shell pwd)
-MAKEFILES_DIR := $(PWD)/makefiles/modules
+MAKEFILES_DIR := $(PWD)/makefilez/modules
 
 include $(MAKEFILES_DIR)/project/Makefile
 
