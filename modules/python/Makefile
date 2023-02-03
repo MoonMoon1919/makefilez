@@ -1,8 +1,8 @@
 # Make targets for python
 PWD ?= $(shell pwd)
-MAKEFILES_DIR := $(PWD)/makefiles
+MAKEFILES_DIR := $(PWD)/makefiles/modules
 
-include $(MAKEFILES_DIR)/project.Makefile
+include $(MAKEFILES_DIR)/project/Makefile
 
 # All cli tools should be here because they are referenced in many places
 TEST_CMD := pytest

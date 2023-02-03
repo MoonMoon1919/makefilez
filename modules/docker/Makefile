@@ -1,7 +1,7 @@
 # Docker stuff
 
 PWD := $(shell pwd)
-MAKEFILES_DIR := $(PWD)/modules
+MAKEFILES_DIR := $(PWD)/makefiles/modules
 
 include $(MAKEFILES_DIR)/project/Makefile
 include $(MAKEFILES_DIR)/git/Makefile
