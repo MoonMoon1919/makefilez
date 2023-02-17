@@ -109,7 +109,7 @@ imports-super: sort clean-imports
 
 # Dead code
 check/dead-code:
-	@command $(DEAD_CODE_CMD) > /dev/null 2>&1 || { echo >&2 "${DEAD_CODE_CMD} not found, please install with 'poetry add $(DEAD_CODE_CMD) --dev'"; exit 1; }
+	@command $(DEAD_CODE_CMD) -h > /dev/null 2>&1 || { echo >&2 "${DEAD_CODE_CMD} not found, please install with 'poetry add $(DEAD_CODE_CMD) --dev'"; exit 1; }
 
 config/dead-code: validate-tomlq
 	@tomlq -t .tool.${DEAD_CODE_CMD} pyproject.toml > /dev/null 2>&1 || { echo >&2 "Config for ${DEAD_CODE_CMD} not found in pyproject.toml, please add!"; exit 1; }
@@ -131,6 +131,7 @@ ifneq ($(shell tomlq -t .tool.${DOCS_CMD} pyproject.toml | grep "convention" | c
 endif
 
 docs%: check/docs config/docs config/docs/convention
+	@echo "Checking in-code documentation..."
 	@$(DOCS_CMD)
 
 # Security
@@ -155,7 +156,7 @@ security-super: code-security deps-security
 
 # Complexity
 check/complexity:
-	@command $(COMPLEXITY_CMD) > /dev/null 2>&1 || { echo >&2 "${COMPLEXITY_CMD} not found, please install with 'poetry add $(COMPLEXITY_CMD) --dev'"; exit 1; }
+	@command $(COMPLEXITY_CMD) -h > /dev/null 2>&1 || { echo >&2 "${COMPLEXITY_CMD} not found, please install with 'poetry add $(COMPLEXITY_CMD) --dev'"; exit 1; }
 
 config/complexity:
 	@cat setup.cfg > /dev/null 2>&1 || { echo >&2 "${COMPLEXITY_CMD} config not found, please execute 'touch setup.cfg'!"; exit 1; }
