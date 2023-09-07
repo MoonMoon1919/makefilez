@@ -16,11 +16,11 @@ Every time I created a new project I found myself recreating Makefile with large
 
 ## Available makefiles
 
-[docker](./modules/docker/Makefile)
-[docker compose](./modules/compose/Makefile)
-[git](./modules/git/Makefile)
-[project](./modules/project/Makefile)
-[python](./modules/python/Makefile)
+- [docker](./modules/docker/Makefile)
+- [docker compose](./modules/compose/Makefile)
+- [git](./modules/git/Makefile)
+- [project](./modules/project/Makefile)
+- [python](./modules/python/Makefile)
 
 ## Contributing
 
