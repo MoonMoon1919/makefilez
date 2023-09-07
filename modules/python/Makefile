@@ -25,6 +25,11 @@ CODE_SEC_FLAGS := -r
 # equality check variables
 DOC_CONVENTION := google
 
+# Tests
+UNIT_TEST_DIR := tests/unit
+INTEGRATION_TEST_DIR := tests/integration
+E2E_TEST_DIR := tests/e2e
+
 # Generic validators
 validate-tomlq:
 	@command -v tomlq > /dev/null 2>&1 || { echo >&2 "tomlq not found, please install tomlq via the yq package with 'poetry add yq --dev"; exit 1; }
